@@ -12,6 +12,7 @@ All Feather porting work for BCC resources lives in **one place**:
 
 | What | Where |
 |---|---|
+| Feather resources created on the dev server | `BCC-FeatherFramework/<resource>` (see below) |
 | Ported resource code | `BCC-FeatherFramework/<resource>`, one repository per resource, same name as the resource |
 | Port notes for one resource | Inside that repository (`FEATHER_PORT.md`, or `FEATHER_REWRITE_PLAN.md` for a rewrite) |
 | This master plan, standards and status | `BCC-FeatherFramework/bcc-feather-masterplan` |
@@ -21,7 +22,14 @@ Do **not** push BCC Feather ports to BryceCanyonCounty, FeatherFramework, person
 accounts or any other organization. The upstream BCC repositories stay the source
 of the original gameplay; this organization holds the Feather versions.
 
-**Feather domain changes are not forked here.** When a port needs a change in a
+**New Feather resources created on the development server also live here.**
+A Feather resource that was built on this server (not taken from
+`FeatherFramework`) gets its own repository in this organization, named like the
+resource: currently [feather-assets](https://github.com/BCC-FeatherFramework/feather-assets)
+and [feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts).
+Push it here as soon as it is created, before any BCC port depends on it.
+
+**Existing Feather resources are not forked here.** When a port needs a change in a
 Feather resource (trust entries, a new export, a policy grant), it is proposed to
 the owning `FeatherFramework/<resource>` repository and tracked in
 [§5 Upstream dependencies](#5-upstream-dependencies). A BCC repository never ships
@@ -141,8 +149,8 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 | `feather-economy` | banks | Bank accounts, reserves, `bank.*` reasons, `BankSupply` | **Local code**, outside the Economy master plan (deferred items); needs review and an upstream PR |
 | `feather-economy` | society | `EnsureOperatedTreasury`, `society.*` reasons | **Local code**, outside the Economy master plan; needs review and an upstream PR |
 | `feather-economy` | stables, shops | `bcc-stables`, `bcc-shops` in readers, provisioners, transactors (not suppliers) | Local config on dev server |
-| `feather-assets` | stables (wagons, boats) | The resource itself | **Not published anywhere**; Stables cannot start without it |
-| `feather-contracts` | banks (loans) | Loan obligations | Built, not live-accepted |
+| `feather-assets` | stables (wagons, boats) | The resource itself | Created on the dev server; in [BCC-FeatherFramework/feather-assets](https://github.com/BCC-FeatherFramework/feather-assets) |
+| `feather-contracts` | banks (loans) | Loan obligations | Created on the dev server; in [BCC-FeatherFramework/feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts); not live-accepted |
 | `feather-audit` | banks | Audit producer kit | Upstream, A2 not live-tested |
 
 Economy deviations that need fixing before the upstream PR:
