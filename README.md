@@ -134,13 +134,13 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 
 | Feather resource | Needed by | Change | State |
 |---|---|---|---|
-| `feather-jobs` | society, doorlocks, craft, stables | Installed (0.1.0); trusts `bcc-society` | Upstream |
+| `feather-jobs` | society, doorlocks, craft, stables | Installed (0.1.0) and started in `server.cfg`; trusts `bcc-society` upstream, `bcc-stables` reader added locally | Upstream + local config |
 | `feather-organizations` | society, banks, shops | `bcc-society` in creators, mutators, readers; `feather-jobs` reader | Local config on dev server |
 | `feather-authority` | society, banks | `bcc-society` in the five access lists | Local config on dev server |
 | `feather-admin` | society, banks | Service policy for `feather-jobs` and `feather-organizations` | Local config on dev server |
 | `feather-economy` | banks | Bank accounts, reserves, `bank.*` reasons, `BankSupply` | **Local code**, outside the Economy master plan (deferred items); needs review and an upstream PR |
 | `feather-economy` | society | `EnsureOperatedTreasury`, `society.*` reasons | **Local code**, outside the Economy master plan; needs review and an upstream PR |
-| `feather-economy` | stables, shops | Trust entries for `bcc-stables`, `bcc-shops` | Missing on dev server |
+| `feather-economy` | stables, shops | `bcc-stables`, `bcc-shops` in readers, provisioners, transactors (not suppliers) | Local config on dev server |
 | `feather-assets` | stables (wagons, boats) | The resource itself | **Not published anywhere**; Stables cannot start without it |
 | `feather-contracts` | banks (loans) | Loan obligations | Built, not live-accepted |
 | `feather-audit` | banks | Audit producer kit | Upstream, A2 not live-tested |
