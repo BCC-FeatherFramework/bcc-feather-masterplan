@@ -153,9 +153,19 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 | `feather-contracts` | banks (loans) | Loan obligations | Created on the dev server; in [BCC-FeatherFramework/feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts); not live-accepted |
 | `feather-audit` | banks | Audit producer kit | Upstream, A2 not live-tested |
 
-Economy deviations that need fixing before the upstream PR:
-`exemptBankSupply` bypasses the Core policy check for bank supply, and
-`ListAccountEntries` lets any trusted reader see any account's history.
+Economy deviations fixed on 2026-10-08 (still local, still need the upstream PR):
+- Bank supply now needs a Core policy decision: `exemptBankSupply = false`, Economy
+  sends `subject.resource`, and feather-admin grants
+  `['feather-economy']['bcc-banks']['economy.currency.issue']`. Admin's disabled
+  prefixes were narrowed to the player money actions (`economy.dollars.`, `.gold.`,
+  `.tokens.`, `.xp.`) so that service grant can apply.
+- `ListAccountEntries` is limited: `privilegedHistoryReaders` (Economy, Admin) read
+  any account; bank transactors read bank accounts; an operator reads only the
+  treasury bound to it.
+
+Still outside the Economy master plan and awaiting review: bank accounts and
+reserves, operated treasuries (`society.*`), bank product reason codes in Economy,
+and issuing into bank accounts.
 
 ---
 
