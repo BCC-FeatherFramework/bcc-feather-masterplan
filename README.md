@@ -1,6 +1,6 @@
 # BCC on Feather — Master Plan
 
-**Status:** active · **Last updated:** 2026-10-06
+**Status:** active · **Last updated:** 2026-10-08
 **Scope:** porting BryceCanyonCounty (BCC) resources to the Feather Framework (Contract 1)
 
 ---
@@ -102,8 +102,8 @@ Counts are files still using a forbidden dependency, measured on 2026-10-06.
 | [bcc-shops](https://github.com/BCC-FeatherFramework/bcc-shops) | public | Economy preparation; not ready for live payments | none | Economy trust for bcc-shops; live purchase tests |
 | [bcc-stables](https://github.com/BCC-FeatherFramework/bcc-stables) | private | Ported; release test 7/7 on 2026-10-03 | none | Needs `feather-assets` (§5); test remaining flows |
 | [bcc-weapons-cosmetics](https://github.com/BCC-FeatherFramework/bcc-weapons-cosmetics) | private | Implemented, offline-tested only | none | Live test; payment through Economy |
-| [bcc-craft](https://github.com/BCC-FeatherFramework/bcc-craft) | private | Not ported (pre-migration snapshot) | vorp 5, MySQL 1, bcc-utils 6, menu v1 4 | Full port; job checks through `CheckAssignment` |
-| [bcc-doorlocks](https://github.com/BCC-FeatherFramework/bcc-doorlocks) | private | Not ported (pre-migration snapshot) | vorp 4, bcc-utils 6, menu v1 3 | Full port; job checks through `CheckAssignment` |
+| [bcc-craft](https://github.com/BCC-FeatherFramework/bcc-craft) | private | Ported 2.0.0 (2026-10-08); not live-tested | none | Live test; `CraftReleaseSmokeTest` lists missing items and unmapped weapons |
+| [bcc-doorlocks](https://github.com/BCC-FeatherFramework/bcc-doorlocks) | private | Ported 2.0.0 (2026-10-08); not live-tested | none | Live test; lockpicking needs a minigame resource |
 | [bcc-housing](https://github.com/BCC-FeatherFramework/bcc-housing) | private | Not ported (pre-migration snapshot) | vorp 7, bcc-utils 25, menu v1 5 | Full port; waits for `feather-property` |
 | [bcc-zonenotify](https://github.com/BCC-FeatherFramework/bcc-zonenotify) | private | Almost clean | bcc-utils 1 | Replace the last bcc-utils call |
 | [bcc-chat](https://github.com/BCC-FeatherFramework/bcc-chat) | public | Feather Chat Contract 1 adapter (2026-09-12) | uses `oxmysql`, `feather-roles` | Decide: retire in favour of `feather-chat`, or update |
@@ -142,7 +142,11 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 
 | Feather resource | Needed by | Change | State |
 |---|---|---|---|
-| `feather-jobs` | society, doorlocks, craft, stables | Installed (0.1.0) and started in `server.cfg`; trusts `bcc-society` upstream, `bcc-stables` reader added locally | Upstream + local config |
+| `feather-jobs` | society, doorlocks, craft, stables | Installed (0.1.0) and started in `server.cfg`; trusts `bcc-society` upstream; `bcc-stables`, `bcc-doorlocks`, `bcc-craft` readers added locally | Upstream + local config |
+| `feather-authority` | doorlocks | `bcc-doorlocks` in the five access lists (staff.doorlocks.manage) | Local config on dev server |
+| `feather-weapons` | craft | `bcc-craft` in `Config.Issuance.trustedResources` (purpose `crafting`) | Local config on dev server |
+| `feather-economy` | craft | `bcc-craft` in readers, provisioners, transactors (craft book prices) | Local config on dev server |
+| `feather-inventory` | craft, stables | `ItemsAPI.AdjustCondition` adds a number to a result table and errors; craft uses Get/SetCondition, stables tool wear is affected | **Upstream bug** to report |
 | `feather-organizations` | society, banks, shops | `bcc-society` in creators, mutators, readers; `feather-jobs` reader | Local config on dev server |
 | `feather-authority` | society, banks | `bcc-society` in the five access lists | Local config on dev server |
 | `feather-admin` | society, banks | Service policy for `feather-jobs` and `feather-organizations` | Local config on dev server |
