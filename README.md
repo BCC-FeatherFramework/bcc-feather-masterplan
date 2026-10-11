@@ -155,6 +155,7 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 | `feather-authority` | doorlocks | `bcc-doorlocks` in the five access lists (staff.doorlocks.manage) | Local config on dev server |
 | `feather-weapons` | craft | `bcc-craft` in `Config.Issuance.trustedResources` (purpose `crafting`) | Local config on dev server |
 | `feather-economy` | craft | `bcc-craft` in readers, provisioners, transactors (craft book prices) | Local config on dev server |
+| `feather-inventory` | society, stables (storage) | Slot moves dropped the move guard's reason, so moving an equipped weapon showed "The inventory changed; try again."; fixed on fork `dev-server` (reason passed through as code `denied`) | **Upstream fix** to send by hand |
 | `feather-inventory` | craft, stables | `ItemsAPI.AdjustCondition` adds a number to a result table and errors; craft uses Get/SetCondition, stables tool wear is affected | **Upstream bug** to report |
 | `feather-organizations` | society, banks, shops | `bcc-society` in creators, mutators, readers; `feather-jobs` reader | Local config on dev server |
 | `feather-authority` | society, banks | `bcc-society` in the five access lists | Local config on dev server |
