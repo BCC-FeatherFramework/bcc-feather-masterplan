@@ -25,8 +25,9 @@ of the original gameplay; this organization holds the Feather versions.
 **New Feather resources created on the development server also live here.**
 A Feather resource that was built on this server (not taken from
 `FeatherFramework`) gets its own repository in this organization, named like the
-resource: currently [feather-assets](https://github.com/BCC-FeatherFramework/feather-assets)
-and [feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts).
+resource: currently [feather-assets](https://github.com/BCC-FeatherFramework/feather-assets),
+[feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts) and
+[feather-property](https://github.com/BCC-FeatherFramework/feather-property).
 Push it here as soon as it is created, before any BCC port depends on it.
 
 **BryceCanyonCounty scripts are forked here too.** 56 `bcc-*` repositories are
@@ -113,7 +114,7 @@ Counts are files still using a forbidden dependency, measured on 2026-10-06.
 | [bcc-weapons-cosmetics](https://github.com/BCC-FeatherFramework/bcc-weapons-cosmetics) | private | Implemented, offline-tested only | none | Live test; payment through Economy |
 | [bcc-craft](https://github.com/BCC-FeatherFramework/bcc-craft) | private | Ported 2.0.0 (2026-10-08); not live-tested | none | Live test; `CraftReleaseSmokeTest` lists missing items and unmapped weapons |
 | [bcc-doorlocks](https://github.com/BCC-FeatherFramework/bcc-doorlocks) | private | Ported 2.0.0 (2026-10-08); not live-tested | none | Live test; lockpicking needs a minigame resource |
-| [bcc-housing](https://github.com/BCC-FeatherFramework/bcc-housing) | private | Not ported (pre-migration snapshot) | vorp 7, bcc-utils 25, menu v1 5 | Full port; waits for `feather-property` |
+| [bcc-housing](https://github.com/BCC-FeatherFramework/bcc-housing) | private | Not ported (pre-migration snapshot); P0 inventory of what moves where done 2026-10-11 (in feather-property `PROPERTY_PLAN.md`) | vorp 7, bcc-utils 25, menu v1 5 | `feather-property` P1–P2, then the port (P3) |
 | [bcc-zonenotify](https://github.com/BCC-FeatherFramework/bcc-zonenotify) | private | Clean (bcc-utils version check removed 2026-10-08); started in `server.cfg` | none | Live test zone notifications |
 | [bcc-chat](https://github.com/BCC-FeatherFramework/bcc-chat) | public | Feather Chat Contract 1 adapter (2026-09-12) | uses `oxmysql`, `feather-roles` | Decide: retire in favour of `feather-chat`, or update |
 
@@ -165,6 +166,7 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 | `feather-economy` | stables, shops | `bcc-stables`, `bcc-shops` in readers, provisioners, transactors (not suppliers) | Local config on dev server |
 | `feather-admin` | testing (all money flows) | Staff `/givemoney` / `/takemoney` (owner capability `economy.<currency>.add/.remove`, console always); Economy supply as service principal `feather-admin` (`economy.currency.issue/destroy` in `service_policy.lua`); audited. Fork `dev-server` `eaa200f` | **Local code**; propose upstream |
 | `feather-assets` | stables (wagons, boats) | The resource itself | Created on the dev server; in [BCC-FeatherFramework/feather-assets](https://github.com/BCC-FeatherFramework/feather-assets) |
+| `feather-property` | housing | Owners and tenants of houses and hotel rooms (Property master plan P1–P3) | Being created on the dev server; [BCC-FeatherFramework/feather-property](https://github.com/BCC-FeatherFramework/feather-property), P0 done |
 | `feather-contracts` | banks (loans) | Loan obligations | Created on the dev server; in [BCC-FeatherFramework/feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts); not live-accepted |
 | `feather-audit` | banks | Audit producer kit | Upstream, A2 not live-tested |
 
