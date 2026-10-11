@@ -178,6 +178,10 @@ Economy deviations fixed on 2026-10-08 (still local, still need the upstream PR)
   any account; bank transactors read bank accounts; an operator reads only the
   treasury bound to it.
 
+The Economy extension is written up as a proposal for the Economy owners:
+[proposals/feather-economy-operated-accounts.md](proposals/feather-economy-operated-accounts.md)
+(code on the fork branch `proposal/operated-accounts`, off by default).
+
 Still outside the Economy master plan and awaiting review: bank accounts and
 reserves, operated treasuries (`society.*`), bank product reason codes in Economy,
 and issuing into bank accounts.
