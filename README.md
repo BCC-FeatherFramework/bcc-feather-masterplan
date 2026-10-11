@@ -29,11 +29,13 @@ resource: currently [feather-assets](https://github.com/BCC-FeatherFramework/fea
 and [feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts).
 Push it here as soon as it is created, before any BCC port depends on it.
 
-**Existing Feather resources are not forked here.** When a port needs a change in a
-Feather resource (trust entries, a new export, a policy grant), it is proposed to
-the owning `FeatherFramework/<resource>` repository and tracked in
-[§5 Upstream dependencies](#5-upstream-dependencies). A BCC repository never ships
-a modified copy of a Feather resource.
+**FeatherFramework resources are forked here for traceability.** Every public
+`feather-*` repository of [FeatherFramework](https://github.com/FeatherFramework) is
+forked into this organization under the same name. Each fork has a `dev-server`
+branch holding the development server's code on top of the installed release, so
+`compare/<tag>...dev-server` shows exactly what the server changed. Nothing is
+pushed to FeatherFramework from here: changes are proposed upstream by hand, and
+the local `upstream` remotes have pushing disabled.
 
 ---
 
