@@ -29,6 +29,13 @@ resource: currently [feather-assets](https://github.com/BCC-FeatherFramework/fea
 and [feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts).
 Push it here as soon as it is created, before any BCC port depends on it.
 
+**BryceCanyonCounty scripts are forked here too.** 56 `bcc-*` repositories are
+GitHub forks of [BryceCanyonCounty](https://github.com/BryceCanyonCounty). The 10 ported
+repositories in §3 are not forks; their `main` was rebuilt on top of the original BCC
+history, so `git diff upstream/main...main` shows only the Feather port. Nothing is
+pushed to BryceCanyonCounty. Not forkable: `bcc-bot`, `bcc-mail`, `bcc-servermenu`,
+`bcc-storage`, `bcc-trapper` (forking disabled by the owner) and `bcc-txadmin-recipe` (empty).
+
 **FeatherFramework resources are forked here for traceability.** Every public
 `feather-*` repository of [FeatherFramework](https://github.com/FeatherFramework) is
 forked into this organization under the same name. Each fork has a `dev-server`
