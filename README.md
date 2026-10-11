@@ -163,6 +163,7 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 | `feather-economy` | banks | Bank accounts, reserves, `bank.*` reasons, `BankSupply` | **Local code**, outside the Economy master plan (deferred items); needs review and an upstream PR |
 | `feather-economy` | society | `EnsureOperatedTreasury`, `society.*` reasons | **Local code**, outside the Economy master plan; needs review and an upstream PR |
 | `feather-economy` | stables, shops | `bcc-stables`, `bcc-shops` in readers, provisioners, transactors (not suppliers) | Local config on dev server |
+| `feather-admin` | testing (all money flows) | Staff `/givemoney` / `/takemoney` (owner capability `economy.<currency>.add/.remove`, console always); Economy supply as service principal `feather-admin` (`economy.currency.issue/destroy` in `service_policy.lua`); audited. Fork `dev-server` `eaa200f` | **Local code**; propose upstream |
 | `feather-assets` | stables (wagons, boats) | The resource itself | Created on the dev server; in [BCC-FeatherFramework/feather-assets](https://github.com/BCC-FeatherFramework/feather-assets) |
 | `feather-contracts` | banks (loans) | Loan obligations | Created on the dev server; in [BCC-FeatherFramework/feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts); not live-accepted |
 | `feather-audit` | banks | Audit producer kit | Upstream, A2 not live-tested |
