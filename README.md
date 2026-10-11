@@ -107,7 +107,7 @@ Counts are files still using a forbidden dependency, measured on 2026-10-06.
 | Repository | Visibility | Port state | Legacy left | Next step |
 |---|---|---|---|---|
 | [bcc-society](https://github.com/BCC-FeatherFramework/bcc-society) | private (ready for public) | **Done: v2.0.0** (2026-10-11). Every flow passed live with two players: jobs, duty, ledger, bills, payroll, creation-day taxes, storage, dissolve | none | Make public; upstream the feather-economy treasury code (§5) |
-| [bcc-banks](https://github.com/BCC-FeatherFramework/bcc-banks) | public | Ported on the Economy ledger | none | Live concurrency/restart tests; one-time balance migration; audit producer |
+| [bcc-banks](https://github.com/BCC-FeatherFramework/bcc-banks) | public | 2.0.0 code complete (2026-10-11): Economy ledger and reserves, Organizations, Authority staff (Admin staff fix), banker job via feather-jobs, `BanksReleaseSmokeTest`; no migration needed | none | Live acceptance (FEATHER_PORT.md list); audit producer |
 | [bcc-shops](https://github.com/BCC-FeatherFramework/bcc-shops) | public | Economy preparation; not ready for live payments | none | Economy trust for bcc-shops; live purchase tests |
 | [bcc-stables](https://github.com/BCC-FeatherFramework/bcc-stables) | private | Ported; release test 7/7 on 2026-10-03 | none | Needs `feather-assets` (§5); test remaining flows |
 | [bcc-weapons-cosmetics](https://github.com/BCC-FeatherFramework/bcc-weapons-cosmetics) | private | Implemented, offline-tested only | none | Live test; payment through Economy |
@@ -151,7 +151,7 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 
 | Feather resource | Needed by | Change | State |
 |---|---|---|---|
-| `feather-jobs` | society, doorlocks, craft, stables | Installed (0.1.0) and started in `server.cfg`; trusts `bcc-society` upstream; `bcc-stables`, `bcc-doorlocks`, `bcc-craft` readers added locally | Upstream + local config |
+| `feather-jobs` | society, doorlocks, craft, stables, banks | Installed (0.1.0) and started in `server.cfg`; trusts `bcc-society` upstream; `bcc-stables`, `bcc-doorlocks`, `bcc-craft`, `bcc-banks` readers added locally | Upstream + local config |
 | `feather-authority` | doorlocks | `bcc-doorlocks` in the five access lists (staff.doorlocks.manage) | Local config on dev server |
 | `feather-weapons` | craft | `bcc-craft` in `Config.Issuance.trustedResources` (purpose `crafting`) | Local config on dev server |
 | `feather-economy` | craft | `bcc-craft` in readers, provisioners, transactors (craft book prices) | Local config on dev server |
