@@ -114,7 +114,7 @@ Counts are files still using a forbidden dependency, measured on 2026-10-06.
 | [bcc-weapons-cosmetics](https://github.com/BCC-FeatherFramework/bcc-weapons-cosmetics) | private | Implemented, offline-tested only | none | Live test; payment through Economy |
 | [bcc-craft](https://github.com/BCC-FeatherFramework/bcc-craft) | private | Ported 2.0.0 (2026-10-08); not live-tested | none | Live test; `CraftReleaseSmokeTest` lists missing items and unmapped weapons |
 | [bcc-doorlocks](https://github.com/BCC-FeatherFramework/bcc-doorlocks) | private | Ported 2.0.0 (2026-10-08); not live-tested | none | Live test; lockpicking needs a minigame resource |
-| [bcc-housing](https://github.com/BCC-FeatherFramework/bcc-housing) | private | 3.0.0 code complete (2026-10-12): feather-property ownership, Economy (no ledger), feather-inventory storage/deeds, doorlocks API, feather-routing interiors; not yet started on the server | none | First start, `HousingReleaseSmokeTest`, live acceptance (FEATHER_PORT.md) |
+| [bcc-housing](https://github.com/BCC-FeatherFramework/bcc-housing) | private | 3.0.0 code complete (2026-10-12): feather-property ownership, Economy (no ledger), feather-inventory storage/deeds, doorlocks API, feather-routing interiors; started, `HousingReleaseSmokeTest` 13/13 (2026-10-12) | none | Live acceptance (FEATHER_PORT.md) |
 | [bcc-zonenotify](https://github.com/BCC-FeatherFramework/bcc-zonenotify) | private | Clean (bcc-utils version check removed 2026-10-08); started in `server.cfg` | none | Live test zone notifications |
 | [bcc-chat](https://github.com/BCC-FeatherFramework/bcc-chat) | public | Feather Chat Contract 1 adapter (2026-09-12) | uses `oxmysql`, `feather-roles` | Decide: retire in favour of `feather-chat`, or update |
 
