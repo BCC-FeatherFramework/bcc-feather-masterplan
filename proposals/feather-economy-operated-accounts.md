@@ -144,7 +144,9 @@ change.
 
 ## 5. Also open in the master plan (not part of this extension)
 
-- E6: a repository test proving no first-party resource writes Economy tables.
+- E6 ownership test: done on the BCC-FeatherFramework fork (`tools/ownership-check.js`, 2026-10-13).
+  On the dev server, 38 started resources: 0 errors, 1 warning (a feather-contracts test reads
+  `economy_transactions` by idempotency key; `GetTransaction` looks up by transaction ID only).
 - Release gates not yet run: history pagination, migration failure, policy-provider failure.
 - Admin integration: a staff money command (`/givemoney`, `/takemoney`) is on the
   BCC-FeatherFramework feather-admin fork; it issues and destroys through Economy as the
