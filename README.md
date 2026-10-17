@@ -152,7 +152,7 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 
 | Feather resource | Needed by | Change | State |
 |---|---|---|---|
-| `feather-jobs` | society, doorlocks, craft, stables, banks | Installed (0.1.0) and started in `server.cfg`; trusts `bcc-society` upstream; `bcc-stables`, `bcc-doorlocks`, `bcc-craft`, `bcc-banks` readers added locally | Upstream + local config |
+| `feather-jobs` | society, doorlocks, craft, stables, banks, housing | 0.2.0 on the BCC fork (2026-10-17): references on mutations, integrity check, Contract 1 (CONTRACT.md) proposed for freezing; release 11/11, lifecycle 26/26; bcc-doorlocks on-duty door verified as second consumer. Trusts `bcc-society` upstream; reader entries added locally | Fork changes to propose upstream + local config |
 | `feather-authority` | doorlocks | `bcc-doorlocks` in the five access lists (staff.doorlocks.manage) | Local config on dev server |
 | `feather-weapons` | craft | `bcc-craft` in `Config.Issuance.trustedResources` (purpose `crafting`) | Local config on dev server |
 | `feather-economy` | craft | `bcc-craft` in readers, provisioners, transactors (craft book prices) | Local config on dev server |
