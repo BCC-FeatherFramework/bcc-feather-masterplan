@@ -109,7 +109,7 @@ Counts are files still using a forbidden dependency, measured on 2026-10-06.
 | Repository | Visibility | Port state | Legacy left | Next step |
 |---|---|---|---|---|
 | [bcc-society](https://github.com/BCC-FeatherFramework/bcc-society) | private (ready for public) | **Done: v2.0.0** (2026-10-11). Every flow passed live with two players: jobs, duty, ledger, bills, payroll, creation-day taxes, storage, dissolve | none | Make public; upstream the feather-economy treasury code (§5) |
-| [bcc-banks](https://github.com/BCC-FeatherFramework/bcc-banks) | public | 2.0.0 code complete (2026-10-11): Economy ledger and reserves, Organizations, Authority staff (Admin staff fix), banker job via feather-jobs, `BanksReleaseSmokeTest`; no migration needed | none | Live acceptance (FEATHER_PORT.md list); audit producer |
+| [bcc-banks](https://github.com/BCC-FeatherFramework/bcc-banks) | public | **3.0.0** (2026-10-18): Economy ledger and reserves, Organizations, Authority staff, banker job; loans in installments through feather-contracts; Branch Reserve page; bank actions in feather-audit (`bank.action.recorded`); `BanksAcceptanceTest` 48/48 offline (live items 2-8, 10); no migration needed | none | In game: restart in the middle of a menu (live item 9) |
 | [bcc-shops](https://github.com/BCC-FeatherFramework/bcc-shops) | public | Economy preparation; not ready for live payments | none | Economy trust for bcc-shops; live purchase tests |
 | [bcc-stables](https://github.com/BCC-FeatherFramework/bcc-stables) | private | Ported; release test 7/7 on 2026-10-03 | none | Needs `feather-assets` (§5); test remaining flows |
 | [bcc-weapons-cosmetics](https://github.com/BCC-FeatherFramework/bcc-weapons-cosmetics) | private | Implemented, offline-tested only | none | Live test; payment through Economy |
@@ -127,7 +127,7 @@ Counts are files still using a forbidden dependency, measured on 2026-10-06.
 
 ### Phase B0: Finish what is running (now)
 1. ~~**bcc-society:** two-player live test and the money flows.~~ Done, v2.0.0 (2026-10-11).
-2. **bcc-banks:** live tests and balance migration.
+2. ~~**bcc-banks:** live tests and balance migration.~~ 3.0.0 (2026-10-18): acceptance 48/48 offline; in-game menu restart check left.
 3. **bcc-shops:** Economy trust, then live purchases.
 4. **bcc-stables:** get `feather-assets` installed, then the remaining flows.
 
