@@ -26,8 +26,9 @@ of the original gameplay; this organization holds the Feather versions.
 A Feather resource that was built on this server (not taken from
 `FeatherFramework`) gets its own repository in this organization, named like the
 resource: currently [feather-assets](https://github.com/BCC-FeatherFramework/feather-assets),
-[feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts) and
-[feather-property](https://github.com/BCC-FeatherFramework/feather-property).
+[feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts),
+[feather-property](https://github.com/BCC-FeatherFramework/feather-property) and
+[feather-licenses](https://github.com/BCC-FeatherFramework/feather-licenses).
 Push it here as soon as it is created, before any BCC port depends on it.
 
 **BryceCanyonCounty scripts are forked here too.** 56 `bcc-*` repositories are
@@ -116,6 +117,8 @@ Counts are files still using a forbidden dependency, measured on 2026-10-06.
 | [bcc-doorlocks](https://github.com/BCC-FeatherFramework/bcc-doorlocks) | private | Ported 2.0.0 (2026-10-08); not live-tested | none | Live test; lockpicking needs a minigame resource |
 | [bcc-housing](https://github.com/BCC-FeatherFramework/bcc-housing) | private | 3.0.0 code complete (2026-10-12): feather-property ownership, Economy (no ledger), feather-inventory storage/deeds, doorlocks API, feather-routing interiors; started, `HousingReleaseSmokeTest` 13/13 (2026-10-12) | none | Live acceptance (FEATHER_PORT.md) |
 | [bcc-zonenotify](https://github.com/BCC-FeatherFramework/bcc-zonenotify) | private | Clean (bcc-utils version check removed 2026-10-08); started in `server.cfg` | none | Live test zone notifications |
+| [bcc-documents](https://github.com/BCC-FeatherFramework/bcc-documents) | private | **Ported 1.0.0** (2026-10-18): licences in feather-licenses (first consumer, L3), fees through Economy as durable orders, items in feather-inventory, `doj` weapon licence by command; release 11/11, offline flow 12/12 | none | Live test with two players |
+| [bcc-legendaries](https://github.com/BCC-FeatherFramework/bcc-legendaries) | private | **Ported 4.0.0** (2026-10-18): hunting licence checked with feather-licenses (L4), fees through Economy, rewards through Inventory, trust per character UUID; offline flow 8/8, release 7/8 | none | Define the 89 reward items in feather-inventory; live hunt |
 | [bcc-chat](https://github.com/BCC-FeatherFramework/bcc-chat) | public | Feather Chat Contract 1 adapter (2026-09-12) | uses `oxmysql`, `feather-roles` | Decide: retire in favour of `feather-chat`, or update |
 
 ---
@@ -168,6 +171,7 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 | `feather-assets` | stables (wagons, boats) | The resource itself | Created on the dev server; [BCC-FeatherFramework/feather-assets](https://github.com/BCC-FeatherFramework/feather-assets): 0.2.0, master plan A0–A5 done; Contract 1 (CONTRACT.md) proposed for freezing; `horse`/`wagon`/`boat` enabled; delegation epoch for feather-access; release 10/10, lifecycle 23/23 per type, bcc-stables flow 9/9 |
 | `feather-property` | housing | Owners and tenants of houses and hotel rooms (Property master plan P1–P3) | Created on the dev server; [BCC-FeatherFramework/feather-property](https://github.com/BCC-FeatherFramework/feather-property): P0 done, P1–P2 accepted (release 10/10, lifecycle 33/33) |
 | `feather-contracts` | banks (loans) | Loan obligations | Created on the dev server; in [BCC-FeatherFramework/feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts); not live-accepted |
+| `feather-licenses` | documents, legendaries | Licences, certifications, permits (Licenses master plan L0–L4) | Created on the dev server 2026-10-18; private [BCC-FeatherFramework/feather-licenses](https://github.com/BCC-FeatherFramework/feather-licenses): 0.1.0, release 10/10, lifecycle 35/35, CONTRACT.md draft |
 | `feather-audit` | banks | Audit producer kit | Upstream, A2 not live-tested |
 
 Economy deviations fixed on 2026-10-08 (still local, still need the upstream PR):
