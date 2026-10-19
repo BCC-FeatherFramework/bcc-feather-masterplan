@@ -173,6 +173,7 @@ Changes a BCC port needs in Feather resources. Each is proposed to the owning
 | `feather-contracts` | banks (loans) | Loan obligations | Created on the dev server; in [BCC-FeatherFramework/feather-contracts](https://github.com/BCC-FeatherFramework/feather-contracts); not live-accepted |
 | `feather-licenses` | documents, legendaries | Licences, certifications, permits (Licenses master plan L0–L4) | Created on the dev server 2026-10-18; private [BCC-FeatherFramework/feather-licenses](https://github.com/BCC-FeatherFramework/feather-licenses): 0.1.0, release 10/10, lifecycle 35/35, CONTRACT.md draft |
 | `feather-audit` | banks | Audit producer kit | Upstream, A2 not live-tested |
+| `feather-justice` | law | Legal records: cases, charges, warrants, citations, custody, rulings, sentences, evidence, sealing (Justice master plan JUS0–JUS7) | Created on the dev server; private [BCC-FeatherFramework/feather-justice](https://github.com/BCC-FeatherFramework/feather-justice): 0.2.0 (2026-10-19), Contract 1 proposed; mock 382+15, `JusticeAcceptanceTest` 57/57 on a MariaDB scratch schema; contract with bcc-law in `LAW_INTEGRATION.md`; live restart and acceptance pending |
 
 Economy deviations fixed on 2026-10-08 (still local, still need the upstream PR):
 - Bank supply now needs a Core policy decision: `exemptBankSupply = false`, Economy
